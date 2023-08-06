@@ -10,13 +10,13 @@ Once you have such access keys you can configure your computer to use them by
 running:
 
 ```ShellSession
-$ nix run github:NixOS/nixpkgs/22.11#awscli configure
+$ nix run github:NixOS/nixpkgs/23.05#awscli configure
 ```
 
 You can then deploy this project by running:
 
 ```ShellSession
-$ nix shell github:NixOS/nixpkgs/22.11#terraform
+$ nix shell github:NixOS/nixpkgs/23.05#terraform
 $ terraform init
 $ terraform apply
 ```
