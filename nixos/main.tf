@@ -81,7 +81,7 @@ locals {
 }
 
 data "external" "instantiate" {
-  program = [ "${path.module}/nixos-rebuild.sh", local.real_flake ]
+  program = [ "${path.module}/instantiate.sh", local.real_flake ]
 }
 
 resource "null_resource" "deploy" {
@@ -98,8 +98,7 @@ resource "null_resource" "deploy" {
       [ "nix",
         "--extra-experimental-features", "nix-command flakes",
         "shell",
-         # TODO: Switch to next LTS release of Nixpkgs when available
-        "github:NixOS/nixpkgs/3cd694#nixos-rebuild",
+        "github:NixOS/nixpkgs/23.05#nixos-rebuild",
         "--command",
         "nixos-rebuild",
         "--fast",
