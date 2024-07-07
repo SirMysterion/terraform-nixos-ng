@@ -84,7 +84,7 @@ locals {
   virtualization_type = startswith(var.virtualization_type, "hvm") ? "hvm" : "paravirtual"
   arch_isolated       = trimsuffix(var.system, "-linux")
   arch                = local.arch_isolated == "aarch64" ? "arm64" : local.arch_isolated
-  nixos_ami_acc_id    = "080433136561" # Pretty sure all published AMIs so far have been from this account
+  nixos_ami_acc_id    = "427812963091" # https://nixos.org/download/#nixos-amazon
 
   # This is the biggest issue with this method as this just grabs the newest release-like AMI.
   # Small tradeoff for a terraform native impl
