@@ -104,7 +104,7 @@ locals {
 data "aws_ami" "ami" {
   most_recent        = true
   include_deprecated = true
-  name_regex         = "^(NixOS|nixos)-${local.release_matcher}"
+  name_regex         = "^(NixOS|nixos)/${local.release_matcher}"
 
   filter {
     name   = "name"
