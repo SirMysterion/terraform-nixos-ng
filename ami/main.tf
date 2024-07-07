@@ -108,7 +108,7 @@ data "aws_ami" "ami" {
 
   filter {
     name   = "name"
-    values = ["NixOS-${local.release}*", "nixos-${local.release}*"]
+    values = ["NixOS/${local.release}*", "nixos/${local.release}*"]
   }
 
   filter {
